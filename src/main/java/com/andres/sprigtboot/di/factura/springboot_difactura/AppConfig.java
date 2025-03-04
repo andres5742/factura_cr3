@@ -16,9 +16,21 @@ public class AppConfig {
 
     @Bean
     List<Item> itemsInvoice() {
+        Product p1 = new Product("camara sony", 800);
+        Product p2 = new Product("bicicleta Bianchi 26", 1500);
+        return Arrays.asList(new Item(p1, 2),new Item(p2, 3));
+
+        // return items;
+    }
+
+    @Bean("default")
+    // @Primary
+    List<Item> itemsInvoiceOfficce() {
         Product p1 = new Product("teclado mecanico", 300);
         Product p2 = new Product("pantalla 24 pulgadas", 1000);
-        return Arrays.asList(new Item(p1, 2),new Item(p2, 3));
+        Product p3 = new Product("impresora asus", 800);
+        Product p4= new Product("escitorio  oficina", 500);
+        return Arrays.asList(new Item(p1, 2),new Item(p2, 3),new Item(p3, 1),new Item(p4, 2));
 
         // return items;
     }
